@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://cpkk7rfkpo4gk"]
+
+[ext_resource type="Texture2D" uid="uid://bguevwjackchf" path="res://Tiles/monitos.png" id="1_83e7o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83e7o"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(0, 0, 320, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwpud"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(0, 0, 320, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1rio"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(320, 0, 320, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhy33"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(960, 0, 320, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hhfp"]
+atlas = ExtResource("1_83e7o")
+region = Rect2(1600, 0, 320, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kwdw2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83e7o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwpud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1rio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhy33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hhfp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kne1u"]
+size = Vector2(128, 128)
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.43051e-06, 3.75)
+scale = Vector2(0.4, 0.127315)
+sprite_frames = SubResource("SpriteFrames_kwdw2")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_kne1u")

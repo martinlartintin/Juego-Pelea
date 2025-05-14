@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://t7blvylogxjw"]
+
+[ext_resource type="Texture2D" uid="uid://c14cikxcwi6yd" path="res://icon.svg" id="1_d4wgf"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_am3mn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu7fc"]
+size = Vector2(1290, 138)
+
+[node name="Plataforma" type="Node2D"]
+position = Vector2(3, 6)
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(656, 572)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_am3mn")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-16.9999, 74)
+scale = Vector2(10.0313, 1.09375)
+texture = ExtResource("1_d4wgf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-18, 73)
+shape = SubResource("RectangleShape2D_yu7fc")
